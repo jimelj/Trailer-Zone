@@ -2,8 +2,10 @@
 // #####------------Variables-------------------------------->
 
 var apiKey = '45b404746d6aecd3a90cbeeeab19a52b';
+
+
 var imagePath = 'https://image.tmdb.org/t/p/';
-var imageConf = 'https://api.themoviedb.org/3/configuration?api_key=45b404746d6aecd3a90cbeeeab19a52b';
+var imageConf = 'https://api.themoviedb.org/3/configuration?api_key=' + apiKey;
 var queryUrlBase = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + apiKey +'&region=us';
 console.log('QUERYURLBASE', queryUrlBase);
 console.log('IMAGECONF', imageConf);
@@ -17,7 +19,9 @@ function runQuery(genre,queryURL,imgConf){
   dataType: "json",
   url: queryURL,
   async: true,
-  success: function(result) {}
+  success: function(result) {
+  //   // return Object;
+  }
 });
 
 
@@ -31,11 +35,56 @@ var ajax2 = $.ajax({
 $.when( ajax1 , ajax2  ).done(function(movieDBData, imgConfig) {
    // a1 and a2 are arguments resolved for the page1 and page2 ajax requests, respectively.
    // Each argument is an array with the following structure: [ data, statusText, jqXHR ]
-   console.log('QUERYURLBASE', queryUrlBase);
-   console.log('IMAGECONF', imageConf);
-   console.log(movieDBData);
-   console.log(movieDBData[0].results[0]);
-   console.log(imgConfig[0].images);
+
+
+   for (var i = 0; i < movieDBData[0].results.length; i++) {
+     console.log('QUERYURLBASE', queryUrlBase);
+     console.log('IMAGECONF', imageConf);
+    //  console.log(movieDBData);
+    //  console.log(movieDBData[0].results[i]);
+    //  console.log(movieDBData[0].results[i].poster_path);
+    //  console.log(imgConfig[0].images.secure_base_url+imgConfig[0].images.poster_sizes[6]+movieDBData[0].results[i].poster_path);
+
+    // console.log('title ' + movieDBData[0].results[i].title);
+    // console.log('genre ' + movieDBData[0].results[i].genre_ids);
+    // console.log('runtime' + movieDBData[0].results[i].title);
+    // console.log('plot ' + movieDBData[0].results[i].overview);
+    // console.log('release date ' + movieDBData[0].results[i].release_date);
+    // console.log('rating ' + Math.round(movieDBData[0].results[i].popularity));
+    // console.log(imgConfig[0].images.secure_base_url+imgConfig[0].images.poster_sizes[6]+movieDBData[0].results[i].poster_path);
+
+    console.log('movies id ' + movieDBData[0].results[i].id);
+    console.log('details');
+    console.log(movieDBData[0].results[i].id);
+    movieId = movieDBData[0].results[i].id;
+    var movieDetails = 'https://api.themoviedb.org/3/movie/'+ movieId +'?api_key=45b404746d6aecd3a90cbeeeab19a52b&language=en-US';
+
+    $.ajax({
+           url: movieDetails,
+           method: "GET"
+       })
+       .done(function(movieDetails){
+
+
+
+        //  console.log("I AM HERE!!!!!!" , movieDetails);
+         console.log('title ' + movieDetails.title);
+         for (var i = 0; i < movieDetails.genres.length; i++) {
+           console.log('genres ',   movieDetails.genres[i].name);
+         }
+         console.log('runtime ' + movieDetails.runtime);
+         console.log('plot ' + movieDetails.overview);
+         console.log('release date ' + movieDetails.release_date);
+         console.log('rating ' + Math.round(movieDetails.popularity));
+         console.log(imgConfig[0].images.secure_base_url+imgConfig[0].images.poster_sizes[6]+movieDetails.poster_path);
+
+       });
+
+
+   }
+
+
+
 });
 
   // Alternate---------------------------------ASK how come this differs in array
