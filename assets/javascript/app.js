@@ -83,14 +83,8 @@ function runQuery(genre, queryURL, imgConf) {
 
 
 
-                    var caroSection = $('<div>');
-                    caroSection.addClass('item');
-                    caroSection.attr('id', 'movie-' + i);
-                    var caroCaption = $('<div>');
-                    caroCaption.addClass('carousel-caption');
-                    caroSection.append(caroCaption);
-                    $('.carousel-inner').append(caroSection);
-                    
+
+
                     $('#movie-' + i).append('<h2>' + movieDetails.title + '<h2>');
                     $('#movie-' + i).append('<img src="' + imgConfig[0].images.secure_base_url + imgConfig[0].images.poster_sizes[6] + movieDetails.poster_path + '" alt="">');
 
@@ -100,7 +94,13 @@ function runQuery(genre, queryURL, imgConf) {
 
                 });
 
-
+                var caroSection = $('<div>');
+                caroSection.addClass('item');
+                caroSection.attr('id', 'movie-' + i);
+                var caroCaption = $('<div>');
+                caroCaption.addClass('carousel-caption');
+                caroSection.append(caroCaption);
+                $('.carousel-inner').append(caroSection);
 
         }
 
