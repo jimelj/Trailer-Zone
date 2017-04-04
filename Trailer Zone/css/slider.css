@@ -1,4 +1,8 @@
 /* Slicebox Style */
+
+#slider{
+	width: 100%;
+}
 .sb-slider {
 	margin: 10px auto;
 	position: relative;
@@ -21,15 +25,21 @@
 
 .sb-slider li > a img {
 	/*border: 20px;*/
+	border-radius: 5px;
+	transition: 0.3s;
 }
 
 .sb-slider img {
-	margin:auto;
-	max-width: 60%;
+	
+	max-width: 55%;
 	position: relative;
+	display: inline-block;
 	
 	
-	display: block;
+}
+#slider{
+	text-align: center;
+    background-origin: content-box;
 }
 
 

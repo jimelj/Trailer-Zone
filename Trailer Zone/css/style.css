@@ -18,9 +18,9 @@
 
 
 body {
-background: linear-gradient(to left, #348F50 , #56B4D3); 
-
+background: linear-gradient(to left, #1A2980 , #26D0CE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         
+/**/        
 
 	
 color: #444;
@@ -51,7 +51,7 @@ h1 span, h5 {
 	font-size: 18px;
 	display: block;
 	font-style: italic;
-	color: black;
+	color: white;
 	font-weight: 400;
 	text-shadow: 0px 1px 1px #fff;
 }
@@ -81,7 +81,7 @@ p.info {
 }
 
 .button {
-    background-color:rgba(197, 33, 33, 0.33);
+    background-color:linear-gradient(to left, #8E0E00 , #1F1C18);
 
     top: 200px;
     left: 200px;
