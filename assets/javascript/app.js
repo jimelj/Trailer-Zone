@@ -36,7 +36,7 @@ function runQuery(genre, queryURL, imgConf) {
         // Each argument is an array with the following structure: [ data, statusText, jqXHR ]
 
 
-        for (var i = 0; i < movieDBData[0].results.length; i++) {
+        for (let i = 0; i < movieDBData[0].results.length; i++) {
             console.log('QUERYURLBASE', queryUrlBase);
             console.log('IMAGECONF', imageConf);
 
@@ -82,25 +82,24 @@ function runQuery(genre, queryURL, imgConf) {
                     //  console.log(imgConfig[0].images.secure_base_url+imgConfig[0].images.poster_sizes[6]+movieDetails.poster_path);
 
 
+                    var caroSection = $('<div>');
+                    caroSection.addClass('item');
+                    caroSection.attr('id', 'movie-' + i);
+                    var caroCaption = $('<div>');
+                    caroCaption.addClass('carousel-caption ' + i);
+                    caroSection.append(caroCaption);
+                    $('.carousel-inner').append(caroSection);
 
 
-
-                    $('#movie-' + i).append('<h2>' + movieDetails.title + '<h2>');
+                    $('.carousel-caption ' + i).append('<h2>' + movieDetails.title + '</h2>');
                     $('#movie-' + i).append('<img src="' + imgConfig[0].images.secure_base_url + imgConfig[0].images.poster_sizes[6] + movieDetails.poster_path + '" alt="">');
-
 
 
 
 
                 });
 
-                var caroSection = $('<div>');
-                caroSection.addClass('item');
-                caroSection.attr('id', 'movie-' + i);
-                var caroCaption = $('<div>');
-                caroCaption.addClass('carousel-caption');
-                caroSection.append(caroCaption);
-                $('.carousel-inner').append(caroSection);
+
 
         }
 

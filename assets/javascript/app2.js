@@ -8,7 +8,7 @@ console.log('QUERYURLBASE', queryUrlBase);
 var a1 = $.ajax({
              url: queryUrlBase,
              dataType: 'json'
-         })
+         }),
         //  .done(function(movieDBData){
          //
         //   //  for (var i = 0; i < movieDBData.results.length; i++) {
@@ -18,17 +18,17 @@ var a1 = $.ajax({
         //   //  }
          //
         //  })
-         ,
+
     a2 = a1.then(function(movieDBData) {
              // .then() returns a new promise
              for (var i = 0; i < movieDBData.results.length; i++) {
                console.log(movieDBData.results[i].id);
-               }
-             console.log(movieDBData);
-             return $.ajax({
+              }
+            //  console.log(movieDBData);
+               return $.ajax({
                  url: 'https://api.themoviedb.org/3/movie/' + movieDBData.results[i].id + '?api_key=45b404746d6aecd3a90cbeeeab19a52b&language=en-US',
                  dataType: 'json',
-                //  data: data.results.id
+                 data: movieDBData.results
              });
 
          });
