@@ -81,18 +81,48 @@ function runQuery(genre, queryURL, imgConf) {
                     //  console.log('rating ' + Math.round(movieDetails.popularity));
                     //  console.log(imgConfig[0].images.secure_base_url+imgConfig[0].images.poster_sizes[6]+movieDetails.poster_path);
 
+                    var imageUrl = imgConfig[0].images.secure_base_url + imgConfig[0].images.poster_sizes[6] + movieDetails.poster_path;
+                    console.log('IMAGEURL', imageUrl);
 
-                    var caroSection = $('<div>');
-                    caroSection.addClass('item');
-                    caroSection.attr('id', 'movie-' + i);
-                    var caroCaption = $('<div>');
-                    caroCaption.addClass('carousel-caption ' + i);
-                    caroSection.append(caroCaption);
-                    $('.carousel-inner').append(caroSection);
+                    var movieTitle = movieDetails.title;
+                    console.log('MOVIETITLE', movieTitle);
+
+                    var sliderj = $('<li>');
+                    sliderj.attr('id', 'movie-' + i);
+                    var anchorTag = $('<a href="#" data-reveal-id="videoModal">');
+
+                    anchorTag.append('<img src="'+ imageUrl + '"/>');
+                    sliderj.append(anchorTag);
+                    $('#sb-slider').append(sliderj);
 
 
-                    $('.carousel-caption ' + i).append('<h2>' + movieDetails.title + '</h2>');
-                    $('#movie-' + i).append('<img src="' + imgConfig[0].images.secure_base_url + imgConfig[0].images.poster_sizes[6] + movieDetails.poster_path + '" alt="">');
+
+                    // var modal = $('<div id="videoModal" class="reveal-modal large" data-reveal aria-labelledby="videoModalTitle" aria-hidden="true" role="dialog">');
+                    // modal.attr('id', 'movie-' + i);
+                    // modal.append('<a class="close"> X </a>');
+                    //
+                    // var videoContent = $('<div class="videoContent">');
+                    //
+                    // videoContent.append('<iframe width="560" height="315" src="https://www.youtube.com/embed/duGqrYw4usE" frameborder="0" allowfullscreen></iframe>');
+                    //
+                    // var movieContent = $('<div class="movieContent">');
+                    // videoContent.append(movieContent);
+                    // modal.append(videoContent);
+                    //
+                    //
+                    // var title = $('<p>');
+                    // title.append(movieTitle);
+                    // movieContent.append(title);
+                    //
+                    // $('.wrapper').append(modal);
+
+
+
+
+
+
+
+
 
 
 
