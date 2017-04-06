@@ -39,7 +39,7 @@ $(function() {
 
                     $(document).foundation();
 
-                    $("#slider li").on("click", function() {
+                    $("img").on("click", function() {
                           console.log($(this));
                         $("#videoModal").foundation('open').fadeIn();
 

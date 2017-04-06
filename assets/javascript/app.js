@@ -6,8 +6,8 @@ var apiKey = '45b404746d6aecd3a90cbeeeab19a52b';
 var imagePath = 'https://image.tmdb.org/t/p/';
 var imageConf = 'https://api.themoviedb.org/3/configuration?api_key=' + apiKey;
 var queryUrlBase = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + apiKey + '&region=us';
-console.log('QUERYURLBASE', queryUrlBase);
-console.log('IMAGECONF', imageConf);
+// console.log('QUERYURLBASE', queryUrlBase);
+// console.log('IMAGECONF', imageConf);
 
 
 // #####------------AJAX CALL-------------------------------->
@@ -37,8 +37,8 @@ function runQuery(genre, queryURL, imgConf) {
 
 
         for (let i = 0; i < movieDBData[0].results.length; i++) {
-            console.log('QUERYURLBASE', queryUrlBase);
-            console.log('IMAGECONF', imageConf);
+            // console.log('QUERYURLBASE', queryUrlBase);
+            // console.log('IMAGECONF', imageConf);
 
 
             //  console.log(movieDBData);
@@ -56,9 +56,9 @@ function runQuery(genre, queryURL, imgConf) {
 
 
 
-            console.log('movies id ' + movieDBData[0].results[i].id);
-            console.log('details' + movieDBData[0].results[i].title);
-            console.log(movieDBData[0].results[i].id);
+            // console.log('movies id ' + movieDBData[0].results[i].id);
+            // console.log('details' + movieDBData[0].results[i].title);
+            // console.log(movieDBData[0].results[i].id);
             movieId = movieDBData[0].results[i].id;
             var movieDetails = 'https://api.themoviedb.org/3/movie/' + movieId + '?api_key=45b404746d6aecd3a90cbeeeab19a52b&language=en-US';
 
@@ -82,10 +82,10 @@ function runQuery(genre, queryURL, imgConf) {
                     //  console.log(imgConfig[0].images.secure_base_url+imgConfig[0].images.poster_sizes[6]+movieDetails.poster_path);
 
                     var imageUrl = imgConfig[0].images.secure_base_url + imgConfig[0].images.poster_sizes[6] + movieDetails.poster_path;
-                    console.log('IMAGEURL', imageUrl);
+                    // console.log('IMAGEURL', imageUrl);
 
                     var movieTitle = movieDetails.title;
-                    console.log('MOVIETITLE', movieTitle);
+                    // console.log('MOVIETITLE', movieTitle);
 
                     var sliderj = $('<li>');
                     sliderj.attr('id', 'movie-' + i);
@@ -95,7 +95,7 @@ function runQuery(genre, queryURL, imgConf) {
                     sliderj.append(anchorTag);
                     $('#sb-slider').append(sliderj);
 
-
+                    console.log(movieTitle);
 
                     // var modal = $('<div id="videoModal" class="reveal-modal large" data-reveal aria-labelledby="videoModalTitle" aria-hidden="true" role="dialog">');
                     // modal.attr('id', 'movie-' + i);
