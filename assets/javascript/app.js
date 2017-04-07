@@ -1,3 +1,6 @@
+var movieId2 = [];
+var imageUrl2 = [];
+
 // #####------------Variables-------------------------------->
 
 var apiKey = '45b404746d6aecd3a90cbeeeab19a52b';
@@ -35,7 +38,7 @@ function runQuery(genre, queryURL, imgConf) {
         // a1 and a2 are arguments resolved for the page1 and page2 ajax requests, respectively.
         // Each argument is an array with the following structure: [ data, statusText, jqXHR ]
 
-
+        // console.log(imgConfig);
         for (let i = 0; i < movieDBData[0].results.length; i++) {
             // console.log('QUERYURLBASE', queryUrlBase);
             // console.log('IMAGECONF', imageConf);
@@ -59,6 +62,17 @@ function runQuery(genre, queryURL, imgConf) {
             // console.log('movies id ' + movieDBData[0].results[i].id);
             // console.log('details' + movieDBData[0].results[i].title);
             // console.log(movieDBData[0].results[i].id);
+
+// =========fixing a bunch of broken stuff===============
+
+ movieId2.push(movieDBData[0].results[i].id);
+imageUrl2.push(imgConfig[0].images.secure_base_url + imgConfig[0].images.poster_sizes[6] + movieDBData[0].results[i].poster_path);
+
+
+
+//=========================
+
+
             movieId = movieDBData[0].results[i].id;
             var movieDetails = 'https://api.themoviedb.org/3/movie/' + movieId + '?api_key=45b404746d6aecd3a90cbeeeab19a52b&language=en-US';
 
@@ -133,7 +147,8 @@ function runQuery(genre, queryURL, imgConf) {
 
         }
 
-
+        console.log("I AM HERE",movieId2);
+        console.log("I AM HERE IMG", imageUrl2);
 
     });
 

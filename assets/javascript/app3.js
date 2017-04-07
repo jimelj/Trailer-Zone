@@ -39,11 +39,19 @@ $(function() {
 
                     $(document).foundation();
 
-                    $("img").on("click", function() {
-                          console.log($(this));
+                    $('li').on("click", function() {
+                        $('.movieContent').empty();
+                        $('.videoContent iframe').attr('src','');
                         $("#videoModal").foundation('open').fadeIn();
 
+                        var id = $(this).attr('id');
 
+
+
+                        movieDetails += id +'?api_key=' + apiKey + '&append_to_response=videos';
+
+                        console.log($(this).attr('id'));
+                        console.log(movieDetails);
 
 
 
@@ -56,7 +64,37 @@ $(function() {
                         $(".header").fadeOut();
                         $(".inputMovie").hide();
 
-                        return false;
+
+
+                        $.ajax({
+                                url: movieDetails,
+                                method: "GET"
+                            }).done(function(movieDetails){
+                              console.log(movieDetails);
+                              var title = movieDetails.original_title;
+                              var date = movieDetails.release_date;
+                              var plot = movieDetails.overview;
+                              var link = movieDetails.homepage;
+                              var genre = [];
+                              var video;
+                              for (var j = 0; j < movieDetails.genres.length; j++) {
+                                 genre.push(movieDetails.genres[j].name);
+                                }
+                              console.log(genre);
+
+                              for (var i = 0; i < movieDetails.videos.results.length; i++) {
+
+                                  console.log(movieDetails.videos.results[i]);
+                                  if (movieDetails.videos.results[i].type === 'Trailer') {
+                                    video = movieDetails.videos.results[i].key;
+                                    console.log(video);
+                                  }
+                              $('.videoContent iframe').attr('src','https://www.youtube.com/embed/' + video);
+
+                                }
+                            });
+                            movieDetails = 'https://api.themoviedb.org/3/movie/';
+                            return false;
                     });
 
                     $('a.close').on('click', function() {
