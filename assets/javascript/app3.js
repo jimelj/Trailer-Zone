@@ -74,6 +74,7 @@ $(function() {
                               var title = movieDetails.original_title;
                               var date = movieDetails.release_date;
                               var plot = movieDetails.overview;
+                              var run = movieDetails.runtime
                               var link = movieDetails.homepage;
                               var genre = [];
                               var video;
@@ -89,21 +90,40 @@ $(function() {
                                     video = movieDetails.videos.results[i].key;
                                     console.log(video);
                                   }
-                              $('.videoContent iframe').attr('src','https://www.youtube.com/embed/' + video);
+
 
                                 }
+                                $('.videoContent iframe').attr('src','https://www.youtube.com/embed/' + video);
+                                var movieTitle = $('<p>');
+                                movieTitle.append(title);
+                                var releaseDate = $('<p>');
+                                releaseDate.append(date);
+                                var moviePlot = $('<p>');
+                                moviePlot.append(plot);
+                                var genres = $('<p>');
+                                genres.append(genre);
+                                var links = $('<p>');
+                                links.append(link);
+                                var runtime = $('<p>');
+                                runtime.append(run);
+                                $('.movieContent').append(movieTitle);
+                                $('.movieContent').append('Runtime: ',runtime);
+                                $('.movieContent').append('Release Date: ',releaseDate);
+                                $('.movieContent').append(moviePlot);
+                                $('.movieContent').append(genre.join(' '));
+                                $('.movieContent').append(links);
                             });
                             movieDetails = 'https://api.themoviedb.org/3/movie/';
                             return false;
                     });
 
-                    $('a.close').on('click', function() {
-                        $('#videoModal').foundation('close');
-                        $(".header").show();
-                        $("#slider").show();
-                        $("#shadow").show();
-                        $navArrows.show();
-                        $(".inputMovie").show();
+                    $('.close-button').on('click', function() {
+                        $('#videoModal').foundation('close').fadeOut();
+                        $(".header").fadeIn();
+                        $("#slider").fadeIn();
+                        $("#shadow").fadeIn();
+                        $navArrows.fadeIn();
+                        $(".inputMovie").fadeIn();
 
                     });
 
@@ -134,4 +154,4 @@ $(function() {
     })();
     Page.init();
 });
-},1000);
+},200);
