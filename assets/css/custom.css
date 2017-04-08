@@ -114,10 +114,15 @@ h3 a {
     display: block;
 	text-align: center;
     color: white;
-	float: right;
+	/*float: right;*/
 	font-size: 20px;
-	margin-right: 5%;
+	margin-right: 2%;
+	margin-left: 1%;
 	width: 200px;
 }
 
 /*/ Google Sign in Button *======================*/
+.videoContent{
+	width:80%;
+
+}
