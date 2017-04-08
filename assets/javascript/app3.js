@@ -25,6 +25,10 @@ $(function() {
                     $("#slider").hide();
                     $("#videoModal").hide();
                     $(".inputMovie").hide();
+
+                    $("#footer").hide();
+
+
                     $(".button").on('click', function() {
 
                         $("#slider").show();
@@ -33,6 +37,8 @@ $(function() {
                         $(".inputMovie").show();
                         $("#shadow").show();
                         $navArrows.show();
+                        $("#footer").show();
+                         $("#topbar").hide();
 
 
                     });
@@ -43,6 +49,7 @@ $(function() {
                         $('.movieContent').empty();
                         $('.videoContent iframe').attr('src','');
                         $("#videoModal").foundation('open').fadeIn();
+
 
                         var id = $(this).attr('id');
 
@@ -56,6 +63,7 @@ $(function() {
 
 
 
+                        $("#footer").fadeOut();
                         $("#slider").fadeOut();
                         $("#logIn").fadeOut();
                         $(".button").fadeOut();
@@ -124,6 +132,7 @@ $(function() {
                         $("#shadow").fadeIn();
                         $navArrows.fadeIn();
                         $(".inputMovie").fadeIn();
+                        $("#footer").fadeIn();
 
                     });
 

@@ -8,6 +8,12 @@
 	z-index: -1;
 	display: none;
 }
+.header{
+
+	/*background:linear-gradient(to right, #232526, #414345);*/
+	height:100px;
+	text-align: center;
+}
 
 h3 {
 	text-align: center;
@@ -50,10 +56,6 @@ h3 a {
 	text-align: center;
 }
 
-.close{
-
-	font-size: 20px;
-}
 
 
 /*=======================================================*/
@@ -121,8 +123,52 @@ h3 a {
 	width: 200px;
 }
 
-/*/ Google Sign in Button *======================*/
+
 .videoContent{
 	width:80%;
 
 }
+
+.tZ{
+	color: #cb356b;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+
+/*/ Footer *======================*/
+	footer {
+		height: 350px;
+		color: white;
+		  background: linear-gradient(to right, #000000, #434343);
+	}
+footer a {
+	color: white;
+}
+/*Top bar =============================*/
+.about{
+	float: right;
+}
+.signup{
+	float: right;
+}
+.top-bar{
+   
+   background: linear-gradient(to right, #36d1dc, #5b86e5);
+	font-size: 18px;
+	
+	
+
+}
+.top-bar a{
+	color: black;
+}
+.moviedblogo{
+	float: left;
+}
+
+.applogo{
+	float: left;
+	margin-left: 40px;
+}
+/*==================map============*/
