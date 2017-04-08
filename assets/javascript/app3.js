@@ -27,6 +27,7 @@ $(function() {
                     $(".inputMovie").hide();
 
                     $("#footer").hide();
+                    $("#findAMovie").hide();
 
 
                     $(".button").on('click', function() {
@@ -39,6 +40,7 @@ $(function() {
                         $navArrows.show();
                         $("#footer").show();
                          $("#topbar").hide();
+                         $("#findAMovie").show();
 
 
                     });

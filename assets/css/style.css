@@ -220,3 +220,11 @@ p.info {
 	text-align: center;
 	font-size: 45px;
 }
+
+#findAMovie{
+    float: right;
+    color:black;
+    border-radius: 10px;
+    background: white;
+    margin-right: 6%;
+}
