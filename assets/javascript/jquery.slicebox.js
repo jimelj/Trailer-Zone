@@ -426,21 +426,7 @@ $.Slicebox.prototype = {
     },
     _layout: function(dir) {
 
-        // create a structure like this and append it to the main container (this.$el):
-        // <div>	wrapper with perspective
-        //   <div>
-        //     <div></div> front side
-        //     <div></div> back side
-        //     <div></div> right side
-        //     <div></div> left side
-        //     <div></div> top side
-        //     <div></div> bottom side
-        //   </div>
-        //   <div>..</div>
-        //   <div>..</div>
-        //   <div>..</div>
-        //   ...	number of slices defined in options
-        // </div>
+
 
         var orientation = this.options.orientation;
 
