@@ -1,7 +1,7 @@
 
 <html>
 <head>
- <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>  
+ <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
      <style>
      /* Always set the map height explicitly to define the size of the div
       * element that contains the map. */
@@ -18,7 +18,7 @@
    </style>
 </head>
 <body>
- 
+
 <div id="mapholder"></div>
 <script>
 var x = document.getElementById("demo");
@@ -45,7 +45,7 @@ var queryURL = "https://api.foursquare.com/v2/venues/search?client_id=LPUN3IZFVI
    // +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
    // document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
 }
- 
+
 //To use this code on your website, get a free API key from Google.
 //Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 function showError(error) {
@@ -74,7 +74,7 @@ console.log(y)
        var map = new google.maps.Map(document.getElementById('mapholder'), {
          zoom: 11,
          center: x
-       }); 
+       });
 for (var i = 0; i < y.response.venues.length; i++) {
 // for (var places in y) {
 // console.log(y.response.venues[i])
@@ -87,11 +87,12 @@ var places = {lat:y.response.venues[i].location.lat, lng:y.response.venues[i].lo
        });
      }
    }
-   
+
 getLocation()
 </script>
    <script async defer
    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCj40yUOqlbpszx_hUaSuNWTz8GXRdDC44">
    </script>
+  //  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCj40yUOqlbpszx_hUaSuNWTz8GXRdDC44&callback=initMap" async defer></script>
 </body>
 </html>

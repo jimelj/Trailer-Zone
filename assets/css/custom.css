@@ -74,7 +74,7 @@ h3 a {
 .inputMovie[type=text]:focus {
     width: 100%;
 }
-#videoModal{
+#videoModal, #mapModal{
     display: none; /* Hidden by default */
     /*position: fixed; /* Stay in place */
     z-index: 2; /* Sit on top */
@@ -153,11 +153,11 @@ footer a {
 	float: right;
 }
 .top-bar{
-   
+
    background: linear-gradient(to right, #36d1dc, #5b86e5);
 	font-size: 18px;
-	
-	
+
+
 
 }
 .top-bar a{
@@ -173,3 +173,6 @@ footer a {
 
 }
 /*==================map============*/
+#mapholder {
+	height: 100%;
+}
