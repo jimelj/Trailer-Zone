@@ -11,20 +11,20 @@
     <link rel="stylesheet" type="text/css" href="assets/css/slider.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/custom.css" />
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Wendy+One" rel="stylesheet">
-    
+
 
     <body>
 
     <div id="topbar" class="top-bar">
-  
+
     <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
       <button class="menu-icon dark" type="button" data-toggle></button>
     </span>
     <strong><a href="" ><img src="assets/images/logo.png" width="90px"></strong>
-  
-    <a class="about" href="" >&nbsp;&nbsp; Sign up &nbsp;&nbsp;&nbsp;</a>  
+
+    <a class="about" href="" >&nbsp;&nbsp; Sign up &nbsp;&nbsp;&nbsp;</a>
     <a class= "signup" href=""> &nbsp; Login &nbsp;&nbsp;</a>
- 
+
   </div>
         <div class="header">
             <h1 > trailer ZONE <span class="tZ">In a world.... where movie trailers collide ! </span></h1>
@@ -33,9 +33,9 @@
         <div class="button-group logInButton">
             <a id="g-signi" data-onsuccess="onSignIn" class="button"> Click to Get Started</a>
         </div>
-            <!--  ============================================================================= 
+            <!--  =============================================================================
             <! =================================================== Image Divs -->
-            
+
             <div class="wrapper">
             <div class="row" id="slider">
                 <ul id="sb-slider" class="sb-slider">
@@ -91,16 +91,14 @@
 <span aria-hidden="true">&times;</span>
 </button>
       </div>
-      <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
 
-    
-    <script type="text/javascript" src="assets/javascript/modernizr.custom.46884.js"></script>
-        
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
-        <script type="text/javascript" src="assets/javascript/jquery.slicebox.js"></script>
-        <script type="text/javascript" src="assets/javascript/app4.js" charset="utf-8"></script>
-        <script type="text/javascript" src="assets/javascript/app3.js"></script>
+      <div class="reveal full" id="mapModal" data-reveal>
+  <h1>Theathers Near You</h1>
+  <div id="mapholder"></div>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 
 
 
@@ -117,20 +115,32 @@
      <img src="assets/images/tickets.png" width="75px"></h5>
     </div>
    <img class="applogo" src="assets/images/app.png" width="100px">
-      <div class="button-group findAMovie">
+      <div class="button-group findAmovie1">
             <a id="findAMovie" data-onsuccess="find" class="button"> Theaters near me</a>
          </div>
    <div class="column">
     <hr>
    <center> <a href="" ><img src="assets/images/face.png" width="70px"> </a>     <a href="#"> <img src="assets/images/link.png" width="57px"> </a> <a href="#"> <img src="assets/images/instagram.png" width="100px"> </a> <a href="#"> <img src="assets/images/tweet.png" width="70px"> </a></center>
-    
+
     </div>
 
-   
+
     </div>
- 
+
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+
+
+  <script type="text/javascript" src="assets/javascript/modernizr.custom.46884.js"></script>
+      <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+      <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
+      <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+      <script type="text/javascript" src="assets/javascript/jquery.slicebox.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCj40yUOqlbpszx_hUaSuNWTz8GXRdDC44"></script>
+       <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCj40yUOqlbpszx_hUaSuNWTz8GXRdDC44&callback=initMap" async defer></script> -->
+      <script type="text/javascript" src="assets/javascript/app4.js" charset="utf-8"></script>
+      <script type="text/javascript" src="assets/javascript/app3.js"></script>
 
     </body>
 
