@@ -54,6 +54,10 @@ h3 a {
 
 .logInButton{
 	text-align: center;
+
+	width: 200px;
+	margin: auto;
+	font-size: 20px;
 }
 
 
@@ -125,7 +129,7 @@ h3 a {
 }
 
 .tZ{
-	color: #cb356b;
+	color: black;
 	font-weight: bold;
 	font-size: 22px;
 }
@@ -149,14 +153,14 @@ footer a {
 }
 .top-bar{
 
-   background: linear-gradient(to right, #36d1dc, #5b86e5);
+   background:linear-gradient(to right, #232526, #414345);
 	font-size: 18px;
 
 
 
 }
 .top-bar a{
-	color: black;
+	color: white;
 }
 .moviedblogo{
 	float: left;
@@ -171,3 +175,12 @@ footer a {
 #mapholder {
 	height: 100%;
 }
+/*==================clock============*/
+/*.clock {
+
+  font-size: 25px;
+  color: #eee;
+  text-align: center;
+  border-radius: 10px;
+  float right;
+}*/
