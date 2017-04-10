@@ -52,13 +52,16 @@ h3 a {
 }
 
 
-.logInButton{
+#signIn{
 	text-align: center;
 
 	width: 200px;
 	margin: auto;
 	font-size: 20px;
+
 }
+
+
 
 
 
@@ -176,11 +179,11 @@ footer a {
 	height: 100%;
 }
 /*==================clock============*/
-/*.clock {
+.clock {
 
   font-size: 25px;
   color: #eee;
   text-align: center;
   border-radius: 10px;
   float right;
-}*/
+}
