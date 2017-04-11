@@ -51,7 +51,7 @@ setTimeout(function() {
                             $('.movieContent').empty();
                             $('.videoContent iframe').attr('src', '');
                             $("#videoModal").foundation('open').fadeIn();
-
+                            hideModal();
 
                             var id = $(this).attr('id');
 
@@ -134,6 +134,22 @@ setTimeout(function() {
 
 
                         console.log('test');
+                        function hideModal (){
+                        $(document).on('keyup', function(evt) {
+                            if (evt.keyCode == 27) {
+                              $('#videoModal').foundation('close').fadeOut();
+                              $('#mapModal').foundation('close').fadeOut();
+                              $(".header").fadeIn();
+                              $("#slider").fadeIn();
+                              $("#shadow").fadeIn();
+                              $navArrows.fadeIn();
+                              $(".inputMovie").fadeIn();
+                              $("#footer").fadeIn();
+                              $("#findAMovie").fadeIn();
+
+                            }
+                        });
+                        }
 
                         $('.close-button').on('click', function() {
                             $('#videoModal').foundation('close').fadeOut();
@@ -148,7 +164,7 @@ setTimeout(function() {
 
                         });
 
-                        
+
 
                         // $(".inputMovie").on("keydown", function search(e) {
                         //         if (e.keyCode == 13) {
@@ -157,8 +173,8 @@ setTimeout(function() {
 
                         //         }
                         //     })
-                    
-                            //================================MAP=============================================
+
+                        //================================MAP=============================================
 
                         $('#findAMovie').on("click", function() {
 
@@ -188,7 +204,10 @@ setTimeout(function() {
 
                             function showPosition(position) {
                                 var latlon = position.coords.latitude + "," + position.coords.longitude;
-                                coord = { lat: position.coords.latitude, lng: position.coords.longitude };
+                                coord = {
+                                    lat: position.coords.latitude,
+                                    lng: position.coords.longitude
+                                };
 
                                 var queryURL = "https://api.foursquare.com/v2/venues/search?client_id=LPUN3IZFVIMWCBJTVKWMBQATLIIJYAKE51SMOVS3SIOIUJOC&client_secret=U5KX2SUOPEZ1XXUZX25WJXB1UA0UBC0ALRCD0BDIKMBGBD2A&v=20130815&ll=" + latlon + "&limit=10&query=movies"
                                 $.ajax({
@@ -200,9 +219,9 @@ setTimeout(function() {
                                         initMap(coord, response)
                                     })
 
-                                    // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-                                    // +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
-                                    // document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+                                // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+                                // +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
+                                // document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
 
 
                             }
@@ -225,8 +244,14 @@ setTimeout(function() {
                             }
 
                             function initMap(currentPosition, foursquareResponse) {
-                                var myLatLng = { lat: -25.363, lng: 131.044 };
-                                var testLat = { lat: 40.74712431269095, lng: -73.99032881455878 };
+                                var myLatLng = {
+                                    lat: -25.363,
+                                    lng: 131.044
+                                };
+                                var testLat = {
+                                    lat: 40.74712431269095,
+                                    lng: -73.99032881455878
+                                };
                                 console.log(foursquareResponse) // the response from Foursquare
                                 console.log(currentPosition) // the current location
                                 var map = new google.maps.Map(document.getElementById('mapholder'), {
@@ -235,7 +260,10 @@ setTimeout(function() {
                                 });
                                 for (var i = 0; i < foursquareResponse.response.venues.length; i++) {
 
-                                    var places = { lat: foursquareResponse.response.venues[i].location.lat, lng: foursquareResponse.response.venues[i].location.lng }
+                                    var places = {
+                                        lat: foursquareResponse.response.venues[i].location.lat,
+                                        lng: foursquareResponse.response.venues[i].location.lng
+                                    }
                                     console.log(places)
                                     var placesName = foursquareResponse.response.venues[i].name
                                     console.log(placesName)
@@ -256,7 +284,7 @@ setTimeout(function() {
 
                             getLocation()
 
-
+                            hideModal();
                             return false;
                         });
                         //===================================================================================================
