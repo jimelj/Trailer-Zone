@@ -171,10 +171,87 @@ setTimeout(function() {
 
                                     console.log("hello");
 
-                                var userSearch = $('.inputMovie').val();
-                                var replaced = userSearch.replace(' ', '+');
+                                var userInput = $('.inputMovie').val();
+                                var userSearch = userInput.replace(' ', '+');
                                 console.log(userSearch);
 
+                                var newSearch = 'https://api.themoviedb.org/3/search/movie?api_key=' + apiKey + '&query=' + userSearch;
+
+                                $('.movieContent2').empty();
+                                $('.videoContent2 iframe').attr('src', '');
+                                $("#videoModal2").foundation('open').fadeIn();
+                                hideModal();
+
+
+
+
+                                $.ajax({
+                                    url: newSearch,
+                                    method: "GET"
+                                }).done(function(newMovie) {
+
+                                  var searchId = newMovie.results[0].id;
+
+                                  $.ajax({
+                                      url: 'https://api.themoviedb.org/3/movie/' + searchId + '?api_key=' + apiKey + '&append_to_response=videos',
+                                      method: "GET"
+                                  }).done(function(newSearchResults) {
+
+                                    var title = newSearchResults.original_title;
+                                    var date = newSearchResults.release_date;
+                                    var plot = newSearchResults.overview;
+                                    var run = newSearchResults.runtime;
+                                    var link = newSearchResults.homepage;
+                                    var genre = [];
+                                    var video;
+                                    for (var j = 0; j < newSearchResults.genres.length; j++) {
+                                        genre.push(newSearchResults.genres[j].name);
+                                    }
+                                    console.log(genre);
+
+                                    for (var i = 0; i < newSearchResults.videos.results.length; i++) {
+
+                                        console.log(newSearchResults.videos.results[i]);
+                                        if (newSearchResults.videos.results[i].type === 'Trailer') {
+                                            video = newSearchResults.videos.results[i].key;
+                                            console.log(video);
+                                        }
+
+
+
+
+
+                                    }
+
+
+
+                                    console.log(newSearchResults);
+                                    $('.videoContent2 iframe').attr('src', 'https://www.youtube.com/embed/' + video);
+                                    var movieTitle = $('<p>');
+                                    movieTitle.append(title);
+                                    var releaseDate = $('<p>');
+                                    releaseDate.append(date);
+                                    var moviePlot = $('<p>');
+                                    moviePlot.append(plot);
+                                    var genres = $('<p>');
+                                    genres.append(genre);
+                                    var links = $('<p>');
+                                    links.append(link);
+                                    var runtime = $('<p>');
+                                    runtime.append(run);
+                                    $('.movieContent2').append(movieTitle);
+                                    $('.movieContent2').append('Runtime: ', runtime);
+                                    $('.movieContent2').append('Release Date: ', releaseDate);
+                                    $('.movieContent2').append(moviePlot);
+                                    $('.movieContent2').append(genre.join(' '));
+                                    $('.movieContent2').append(links);
+
+
+
+                                  });
+
+
+                                });
 
 
 

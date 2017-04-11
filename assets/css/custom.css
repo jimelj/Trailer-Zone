@@ -81,7 +81,7 @@ h3 a {
 .inputMovie[type=text]:focus {
     width: 100%;
 }
-#videoModal, #mapModal{
+#videoModal, #mapModal, #videoModal2{
     display: none; /* Hidden by default */
     /*position: fixed; /* Stay in place */
     z-index: 2; /* Sit on top */
@@ -118,7 +118,7 @@ h3 a {
     cursor: pointer;
 }
 
-.movieContent{
+.movieContent, .movieContent2{
 	margin: auto;
     display: block;
 	text-align: center;
@@ -131,7 +131,7 @@ h3 a {
 }
 
 
-.videoContent{
+.videoContent, .videoContent2{
 	width:80%;
 
 }
