@@ -16,7 +16,7 @@ setTimeout(function() {
 
 
                     onReady: function() {
-                        // debugger;
+                        
                         $navArrows.hide();
                         $shadow.hide();
 
