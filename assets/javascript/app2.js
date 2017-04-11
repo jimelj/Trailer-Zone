@@ -102,6 +102,9 @@ setTimeout(function() {
                                     }
 
 
+
+
+
                                 }
                                 $('.videoContent iframe').attr('src', 'https://www.youtube.com/embed/' + video);
                                 var movieTitle = $('<p>');
@@ -127,6 +130,9 @@ setTimeout(function() {
                             return false;
                         });
 
+
+
+
                         console.log('test');
 
                         $('.close-button').on('click', function() {
@@ -141,7 +147,18 @@ setTimeout(function() {
 
 
                         });
-                        //================================MAP=============================================
+
+                        
+
+                        // $(".inputMovie").on("keydown", function search(e) {
+                        //         if (e.keyCode == 13) {
+                        //             console.log("hello");
+                        //             $("#videoModal").foundation('open').fadeIn();
+
+                        //         }
+                        //     })
+                    
+                            //================================MAP=============================================
 
                         $('#findAMovie').on("click", function() {
 
@@ -182,6 +199,12 @@ setTimeout(function() {
 
                                         initMap(coord, response)
                                     })
+
+                                    // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+                                    // +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
+                                    // document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+
+
                             }
 
                             function showError(error) {

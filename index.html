@@ -3,6 +3,8 @@
 
 <head>
     <title>Trailer Zone </title>
+
+    <!-- ============================Meta Tags===================================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-signin-client_id" content="36594423885-fvd8a5d36alch5hj1nn2pqt121b3rmi5.apps.googleusercontent.com">
@@ -10,33 +12,29 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/slider.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/custom.css" />
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Wendy+One" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
 
     <body>
 
-    <div id="topbar" class="top-bar">
-
-    <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+        <div id="topbar" class="top-bar">
+            <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
       <button class="menu-icon dark" type="button" data-toggle></button>
     </span>
-    <strong><a href="" ><img src="assets/images/logo.png" width="90px"></strong>
-
-    <a class="about" href="" >&nbsp;&nbsp; Sign up &nbsp;&nbsp;&nbsp;</a>
-    <a class= "signup" href=""> &nbsp; Login &nbsp;&nbsp;</a>
-
-  </div>
+            
+            <img class="moviedblogo" src="assets/images/movieDB.png" width="80px">
+            <a class="about" href="">&nbsp;&nbsp; Sign up &nbsp;&nbsp;&nbsp;</a>
+            <a class="signup" href=""> &nbsp; Login &nbsp;&nbsp;</a>
+        </div>
         <div class="header">
-            <h1 > trailer ZONE <span class="tZ">In a world.... where movie trailers collide ! </span></h1>
+            <h1> trailer ZONE <span class="tZ">In a world.... where movie trailers collide ! </span></h1>
         </div>
         <p id="logIn">Log in !</p>
         <div class="button-group logInButton">
-            <a id="g-signi" data-onsuccess="onSignIn" class="button"> Click to Get Started</a>
+            <a id="signIn" data-onsuccess="onSignIn" class="button expanded"> Click to Get Started</a>
         </div>
-            <!--  =============================================================================
+        <!--  =============================================================================
             <! =================================================== Image Divs -->
-
-            <div class="wrapper">
+        <div class="wrapper">
             <div class="row" id="slider">
                 <ul id="sb-slider" class="sb-slider">
                 </ul>
@@ -49,65 +47,80 @@
             </div>
         </div>
         </div>
-
         <!--  ================================================================== -->
         <div class="wrapper">
             <center>
                 <input class="inputMovie" placeholder="Search for a Movie" type="text"> </center>
         </div>
-        <!-- =================================================================== Modal -->
-        <div class="reveal large" id="videoModal" data-reveal data-close-on-esc="false" data-close-on-click="false" data-animation-in="fade-in"   >
-          <div class="videoContent float-left">
-            <div class="flex-video widescreen">
-              <iframe width="100" height="100" src="https://www.youtube.com/embed/duGqrYw4usE" frameborder="0" allowfullscreen></iframe>
+        <!-- ======================================================= Modal====================== -->
+        <div class="reveal large" id="videoModal" data-reveal data-close-on-esc="false" data-close-on-click="false" data-animation-in="fade-in">
+            <div class="videoContent float-left">
+                <div class="flex-video widescreen">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/O2Bsw3lrhvs" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
+            <div class="movieContent float-left">
+                <p> </p>
+            </div>
+            <button class="close-button" data-close aria-label="Close modal" data-animation-out="fade-out" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
-        <div class="movieContent float-left">
-            <p> Movie Content goes here</p>
-
-    </div>
-        <button class="close-button" data-close aria-label="Close modal" data-animation-out="fade-out" type="button">
-<span aria-hidden="true">&times;</span>
-</button>
-      </div>
-
-      <div class="reveal full" id="mapModal" data-reveal>
-  <h1>Theathers Near You</h1>
-  <div id="mapholder"></div>
-  <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-
-
-
-
-        <!--  =============================================================== -->
-<footer id="footer">
-    <div class="wrap row data-responsive-toggle">
-   <div class="column"></div>
-   <br>
-    <img class="moviedblogo" src="assets/images/movieDB.png" width="65px">
-
-    <h5> Like what you see?  Connect with us </h5>
-    <h5> We might have free movie tickets for you.. (if you are quick!)
+        <div class="reveal full" id="mapModal" data-reveal>
+            <h1>Theaters Near You</h1>
+            <div id="mapholder"></div>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!--  ================================Footer =============================== -->
+        <footer id="footer">
+            <div class="wrap row data-responsive-toggle">
+                <div class="column"></div>
+                <br>
+                <div id="clock" class="clock">loading...</div>
+                <h5>  Connect with us for a chance to win free movie tickets..
      <img src="assets/images/tickets.png" width="75px"></h5>
-    </div>
-   <img class="applogo" src="assets/images/app.png" width="100px">
-      <div class="button-group findAmovie1">
-            <a id="findAMovie" data-onsuccess="find" class="button"> Theaters near me</a>
-         </div>
-   <div class="column">
-    <hr>
-   <center> <a href="" ><img src="assets/images/face.png" width="70px"> </a>     <a href="#"> <img src="assets/images/link.png" width="57px"> </a> <a href="#"> <img src="assets/images/instagram.png" width="100px"> </a> <a href="#"> <img src="assets/images/tweet.png" width="70px"> </a></center>
 
-    </div>
+            </div>
+            <img class="applogo" src="assets/images/app.png" width="100px">
+            <div class="button-group findAmovie1">
+                <a id="findAMovie" data-onsuccess="find" class="button round even-6"> Find theaters near me</a>
+            </div>
+            <div class="column">
+                <hr>
+                <center>
+                    <a href=""><img src="assets/images/face.png" width="70px"> </a>
+                    <a href="#"> <img src="assets/images/link.png" width="57px"> </a>
+                    <a href="#"> <img src="assets/images/instagram.png" width="100px"> </a>
+                    <a href="#"> <img src="assets/images/tweet.png" width="70px"> </a>
+                </center>
+            </div>
+            </div>
+        </footer>
+        <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+        <script type="text/javascript" src="assets/javascript/modernizr.custom.46884.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+        <script type="text/javascript" src="assets/javascript/jquery.slicebox.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCj40yUOqlbpszx_hUaSuNWTz8GXRdDC44"></script>
+        <script type="text/javascript" src="assets/javascript/app1.js" charset="utf-8"></script>
+        <script type="text/javascript" src="assets/javascript/app2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.1.0/moment.min.js"></script>
 
+        <!--  ======================== Moment.JS ======================================= -->
+        <script>
+        $('#clock');
 
-    </div>
+        function update() {
+            $('#clock').html(moment().format('D. MMMM YYYY H:mm:ss'));
+        }
 
-    </footer>
+        setInterval(update, 1000);
+        </script>
 
+  
     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
 
 
@@ -120,6 +133,8 @@
       <script type="text/javascript" src="assets/javascript/app1.js" charset="utf-8"></script>
       <script type="text/javascript" src="assets/javascript/app2.js"></script>
 
+
+        <!--  =============================================================== -->
     </body>
 
 </html>
