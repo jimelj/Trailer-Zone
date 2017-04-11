@@ -16,7 +16,7 @@ setTimeout(function() {
 
 
                     onReady: function() {
-                        
+
                         $navArrows.hide();
                         $shadow.hide();
 
@@ -166,13 +166,21 @@ setTimeout(function() {
 
 
 
-                        // $(".inputMovie").on("keydown", function search(e) {
-                        //         if (e.keyCode == 13) {
-                        //             console.log("hello");
-                        //             $("#videoModal").foundation('open').fadeIn();
+                        $(".inputMovie").on("keydown", function search(e) {
+                                if (e.keyCode == 13) {
 
-                        //         }
-                        //     })
+                                    console.log("hello");
+
+                                var userSearch = $('.inputMovie').val();
+                                var replaced = userSearch.replace(' ', '+');
+                                console.log(userSearch);
+
+
+
+
+
+                                }
+                            })
 
                         //================================MAP=============================================
 
