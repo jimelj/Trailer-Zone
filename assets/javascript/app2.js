@@ -199,12 +199,12 @@ setTimeout(function() {
 
                                         initMap(coord, response)
                                     })
-<<<<<<< HEAD
+
                                     // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
                                     // +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
                                     // document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
-=======
->>>>>>> 917c3efab80c597607a02809959503d892d848e2
+
+
                             }
 
                             function showError(error) {
