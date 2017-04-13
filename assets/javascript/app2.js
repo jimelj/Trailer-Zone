@@ -135,6 +135,20 @@ setTimeout(function() {
 
                         console.log('test');
                         function hideModal (){
+                          $('.close-button').on('click', function() {
+                              $('#videoModal').foundation('close').fadeOut();
+                              $(".header").fadeIn();
+                              $("#slider").fadeIn();
+                              $("#shadow").fadeIn();
+                              $navArrows.fadeIn();
+                              $(".inputMovie").fadeIn();
+                              $("#footer").fadeIn();
+                              $("#findAMovie").fadeIn();
+
+
+                          });
+
+
                         $(document).on('keyup', function(evt) {
                             if (evt.keyCode == 27) {
                               $('#videoModal').foundation('close').fadeOut();
@@ -151,18 +165,6 @@ setTimeout(function() {
                         });
                         }
 
-                        $('.close-button').on('click', function() {
-                            $('#videoModal').foundation('close').fadeOut();
-                            $(".header").fadeIn();
-                            $("#slider").fadeIn();
-                            $("#shadow").fadeIn();
-                            $navArrows.fadeIn();
-                            $(".inputMovie").fadeIn();
-                            $("#footer").fadeIn();
-                            $("#findAMovie").fadeIn();
-
-
-                        });
 
 
 
