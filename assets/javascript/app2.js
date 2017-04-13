@@ -115,7 +115,7 @@ setTimeout(function() {
                                 moviePlot.append(plot);
                                 var genres = $('<p>');
                                 genres.append(genre);
-                                var links = $('<p>');
+                                var links = $('<br><a href="' + link  +'"></a>');
                                 links.append(link);
                                 var runtime = $('<p>');
                                 runtime.append(run);
