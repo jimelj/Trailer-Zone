@@ -249,7 +249,7 @@ setTimeout(function() {
                                     var genres = $('<p>');
                                     genres.append(genre);
                                     var links = $('<p>');
-                                    links.append(link);
+                                    links.append('<br><a href="' + link +'">'+ title + '</a>');
                                     var runtime = $('<p>');
                                     runtime.append(run);
                                     $('.movieContent2').append(movieTitle);
