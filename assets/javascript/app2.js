@@ -115,8 +115,8 @@ setTimeout(function() {
                                 moviePlot.append(plot);
                                 var genres = $('<p>');
                                 genres.append(genre);
-                                var links = $('<br><a href="' + link  +'"></a>');
-                                links.append(link);
+                                var links = $('<br><a href="' + link +'">'+ title + '</a>');
+                                // links.append(link);
                                 var runtime = $('<p>');
                                 runtime.append(run);
                                 $('.movieContent').append(movieTitle);
@@ -137,6 +137,7 @@ setTimeout(function() {
                         function hideModal (){
                           $('.close-button').on('click', function() {
                               $('#videoModal').foundation('close').fadeOut();
+                              $('#videoModal2').foundation('close').fadeOut();
                               $(".header").fadeIn();
                               $("#slider").fadeIn();
                               $("#shadow").fadeIn();
@@ -152,6 +153,7 @@ setTimeout(function() {
                         $(document).on('keyup', function(evt) {
                             if (evt.keyCode == 27) {
                               $('#videoModal').foundation('close').fadeOut();
+                              $('#videoModal2').foundation('close').fadeOut();
                               $('#mapModal').foundation('close').fadeOut();
                               $(".header").fadeIn();
                               $("#slider").fadeIn();
@@ -182,6 +184,15 @@ setTimeout(function() {
                                 $('.movieContent2').empty();
                                 $('.videoContent2 iframe').attr('src', '');
                                 $("#videoModal2").foundation('open').fadeIn();
+                                $("#footer").fadeOut();
+                                $("#slider").fadeOut();
+                                $("#logIn").fadeOut();
+                                $(".button").fadeOut();
+                                $("#shadow").fadeOut();
+                                $navArrows.fadeOut();
+                                $(".header").fadeOut();
+                                $(".inputMovie").hide();
+
                                 hideModal();
 
 
